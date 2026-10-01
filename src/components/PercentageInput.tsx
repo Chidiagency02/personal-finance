@@ -8,9 +8,11 @@ interface Props {
   onChange: (value: number) => void;
   compact?: boolean;
   ariaLabel: string;
+  disabled?: boolean;
+  maxDecimals?: number;
 }
 
-export function PercentageInput({ id, value, onChange, compact = false, ariaLabel }: Props) {
+export function PercentageInput({ id, value, onChange, compact = false, ariaLabel, disabled = false, maxDecimals = 3 }: Props) {
   const [draft, setDraft] = useState({ raw: String(value), numeric: value });
   const displayValue = draft.numeric === value ? draft.raw : String(value);
 
@@ -22,10 +24,11 @@ export function PercentageInput({ id, value, onChange, compact = false, ariaLabe
         inputMode="decimal"
         autoComplete="off"
         aria-label={ariaLabel}
+        disabled={disabled}
         value={displayValue}
         onChange={(event) => {
           const next = event.target.value;
-          if (!/^(?:\d{0,3})(?:\.\d{0,3})?$/.test(next)) return;
+          if (!new RegExp(`^(?:\\d{0,3})(?:\\.\\d{0,${maxDecimals}})?$`).test(next)) return;
           if (next !== "" && Number(next) > 100) return;
           const numeric = next === "" || next === "." ? 0 : Number(next);
           setDraft({ raw: next, numeric });

@@ -1,5 +1,6 @@
 export type AllocationKind = "direct" | "reallocation";
 export type Currency = "NGN" | "USD" | "GBP" | "EUR";
+export type Theme = "light" | "dark";
 
 export interface AllocationNode {
   id: string;
@@ -29,4 +30,6 @@ export interface SavedPlan {
   income: number;
   currency: Currency;
   percentages: Record<string, number>;
+  theme?: Theme;
+  topLevel?: Array<{ id: string; name: string }>;
 }

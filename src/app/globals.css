@@ -80,3 +80,56 @@ table{width:100%;border-collapse:collapse;text-align:left;min-width:760px}th{bac
 @media(max-width:600px){.site-header{height:65px}.header-note{display:none}.brand{font-size:14px}.intro-row{padding:44px 0 30px}.intro-row h1{font-size:46px}.intro-copy{font-size:13px;margin-top:17px}.income-panel{padding:25px 22px;border-radius:16px}.income-main{gap:13px}.income-icon{width:36px;height:36px;flex-basis:36px}.income-input-row input{font-size:29px}.income-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.income-stats strong{font-size:16px}.top-section,.nested-section,.ledger-section{margin-top:57px}.section-heading{align-items:flex-start;flex-direction:column;gap:13px}.section-heading h2,.explanation h2{font-size:25px}.section-actions{justify-content:flex-start}.allocation-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.allocation-card{min-height:230px;padding:14px}.card-topline{flex-direction:column;gap:9px}.allocation-card h3{margin-top:16px;font-size:12px;min-height:32px}.card-amount{font-size:17px}.card-bottom{align-items:flex-end}.card-bottom label{max-width:70px}.group-card{padding:22px 18px 5px}.group-header{flex-direction:column}.group-total{text-align:left}.group-row{grid-template-columns:minmax(0,1fr) 85px;gap:9px 15px;padding:15px 0}.group-row-name{grid-column:1;grid-row:1}.row-share{grid-column:2;grid-row:1;align-items:flex-end}.row-effective{grid-column:1;grid-row:2;padding-left:19px}.row-amount{grid-column:2;grid-row:2}.explanation{grid-template-columns:1fr;padding:26px 22px;margin-top:58px}.formula-card>div{flex-direction:column;gap:4px}.formula-card strong{text-align:left}.site-footer{padding:20px 22px 30px}}
 @media(max-width:600px){.ledger-scroll{display:none}.mobile-ledger{display:block}.mobile-ledger-row{padding:20px 18px;border-bottom:1px solid #edf0f3}.mobile-ledger-row:last-child{border-bottom:0}.mobile-ledger-title{display:flex;align-items:center;gap:0;font-size:13px;line-height:1.4}.mobile-ledger-parent{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:11px 0 16px;font-size:10px}.mobile-ledger-parent span,.mobile-ledger-metrics span{color:#97a3b0}.mobile-ledger-parent strong{font-weight:650;text-align:right;color:#596a7d;overflow-wrap:anywhere}.mobile-ledger-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mobile-ledger-metrics>div{display:flex;flex-direction:column;gap:6px;min-width:0}.mobile-ledger-metrics span{font-size:9px}.mobile-ledger-metrics strong{font-size:11px;font-weight:800;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.mobile-ledger-metrics>div:last-child{text-align:right}}
 @media(max-width:370px){.allocation-grid{grid-template-columns:1fr}.allocation-card{min-height:200px}.card-topline{flex-direction:row}.allocation-card h3{min-height:0}.income-stats{grid-template-columns:1fr}.income-stats .status-pill{grid-column:1}.income-input-row{gap:8px}.currency-wrap select{min-width:70px}}
+
+/* Allocation controls */
+.header-actions{display:flex;align-items:center;gap:22px}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:7px 11px;border:1px solid var(--border);border-radius:9px;background:#fff;color:#4a5b70;font-size:11px;font-weight:750;white-space:nowrap;transition:background .2s,border-color .2s}
+.theme-toggle:hover,.add-button:hover{background:#edf4f1}
+.add-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 15px;font-size:12px;font-weight:750;min-height:40px;background:#e8f5ee;border:1px solid #d3e9dc;color:#177354;transition:background .2s}
+.card-controls{display:flex;align-items:center;gap:5px;min-width:0}
+.remove-card{display:grid;place-items:center;width:25px;height:25px;padding:0;flex:0 0 25px;border:0;border-radius:6px;background:transparent;color:#9ba7b5;transition:background .2s,color .2s}
+.remove-card:hover:not(:disabled){background:#fff0ed;color:#b44f43}
+.remove-card:disabled{opacity:.35}
+.card-name-input{display:block;width:100%;min-height:35px;margin:23px 0 6px;border:0;border-bottom:1px dashed #b8c7c0;border-radius:0;background:transparent;color:var(--navy);font-size:13px;font-weight:750;line-height:1.32;outline:none;padding:0 0 2px}
+.card-name-input:focus{border-bottom-color:var(--green)}
+.percentage-input input:disabled{color:#8d99a8;cursor:not-allowed}
+.add-section-form{display:grid;grid-template-columns:minmax(180px,1.5fr) minmax(125px,.6fr) auto;align-items:end;gap:13px;background:#fff;border:1px solid var(--border);border-radius:13px;padding:18px;margin:0 0 18px;box-shadow:0 5px 17px rgba(19,37,62,.025)}
+.add-section-form>div{min-width:0}.add-section-form label{display:block;color:#64758a;font-size:11px;font-weight:750;margin-bottom:7px}
+.add-section-form input{width:100%;height:39px;border:1px solid #dce4eb;border-radius:8px;background:#fff;color:var(--navy);padding:0 11px;font-size:12px;outline:none}
+.add-section-form input:focus{border-color:#77a0df;box-shadow:0 0 0 3px #dceafa}
+.new-share-input{position:relative}.new-share-input input{padding-right:26px}.new-share-input span{position:absolute;right:11px;top:12px;font-size:12px;color:#738095}
+.add-section-help,.form-error{grid-column:1/-1;margin:0;font-size:11px;line-height:1.4}.add-section-help{color:#8896a5}.form-error{color:#b44f43;font-weight:700}
+
+/* Dark theme */
+:root[data-theme="dark"]{color-scheme:dark;--navy:#edf4fb;--muted:#a7b7c9;--border:#314157;--background:#0d1725;--green:#70d7ac;--blue:#8caeff}
+:root[data-theme="dark"] .site-header,:root[data-theme="dark"] .allocation-card,:root[data-theme="dark"] .group-card,:root[data-theme="dark"] .ledger-card,:root[data-theme="dark"] .formula-card,:root[data-theme="dark"] .add-section-form{background:#172438;color:#eaf2fb}
+:root[data-theme="dark"] .income-panel{background:#1c3350;box-shadow:0 16px 38px #03091255}
+:root[data-theme="dark"] .income-icon,:root[data-theme="dark"] .currency-wrap{background:#2c4766}
+:root[data-theme="dark"] .theme-toggle,:root[data-theme="dark"] .reset-button{background:#203047;border-color:#3b4e66;color:#d4e0ed}
+:root[data-theme="dark"] .theme-toggle:hover,:root[data-theme="dark"] .reset-button:hover{background:#2b405a}
+:root[data-theme="dark"] .add-button{background:#173e36;border-color:#2f6652;color:#93e4bc}
+:root[data-theme="dark"] .add-button:hover{background:#205245}
+:root[data-theme="dark"] .save-button{background:#426b91;border-color:#426b91;color:#fff}
+:root[data-theme="dark"] .save-button:hover:not(:disabled){background:#5580a6}
+:root[data-theme="dark"] .blue-icon,:root[data-theme="dark"] .badge-blue{background:#253b65;color:#a4bbff}
+:root[data-theme="dark"] .green-icon,:root[data-theme="dark"] .badge-green{background:#214939;color:#8ee0b5}
+:root[data-theme="dark"] .percentage-input,:root[data-theme="dark"] .add-section-form input{background:#122034;border-color:#3a4d64;color:#ecf3fb}
+:root[data-theme="dark"] .percentage-input input{color:#ecf3fb}
+:root[data-theme="dark"] .card-name-input{color:#ecf3fb;border-bottom-color:#527467}
+:root[data-theme="dark"] .progress-track{background:#2b3d52}
+:root[data-theme="dark"] .group-rows,:root[data-theme="dark"] .group-row,:root[data-theme="dark"] td,:root[data-theme="dark"] .mobile-ledger-row,:root[data-theme="dark"] .formula-card>div{border-color:#2d3e51}
+:root[data-theme="dark"] th{background:#1e3046;color:#acbdd0}
+:root[data-theme="dark"] td,:root[data-theme="dark"] td:first-child,:root[data-theme="dark"] .ledger-amount,:root[data-theme="dark"] .mobile-ledger-parent strong{color:#d7e3f0}
+:root[data-theme="dark"] .ledger-share,:root[data-theme="dark"] .status-good{background:#214a3c;color:#9be4ba}
+:root[data-theme="dark"] .status-warning{background:#4b3a20;color:#f3d590}
+:root[data-theme="dark"] .status-error,:root[data-theme="dark"] .validation-message{background:#4b302c;color:#f6b5a1;border-color:#6f4439}
+:root[data-theme="dark"] .explanation{background:#18342e}
+:root[data-theme="dark"] .site-footer{border-color:#2a3b4d;color:#a8b7c9}
+:root[data-theme="dark"] .intro-copy,:root[data-theme="dark"] .intro-aside,:root[data-theme="dark"] .section-heading p:not(.eyebrow),:root[data-theme="dark"] .group-description,:root[data-theme="dark"] .allocation-footnote,:root[data-theme="dark"] .explanation>div:first-child>p:last-child{color:#aab9ca}
+:root[data-theme="dark"] .card-bottom label,:root[data-theme="dark"] .group-total span,:root[data-theme="dark"] .group-total small,:root[data-theme="dark"] .row-share label,:root[data-theme="dark"] .row-effective span,:root[data-theme="dark"] .row-amount span,:root[data-theme="dark"] .mobile-ledger-parent span,:root[data-theme="dark"] .mobile-ledger-metrics span,:root[data-theme="dark"] .formula-card span,:root[data-theme="dark"] .add-section-help{color:#a6b8ca}
+:root[data-theme="dark"] .formula-card strong{color:#8ae4b7}
+:root[data-theme="dark"] .add-section-form label{color:#bdccdc}
+:root[data-theme="dark"] .remove-card{color:#9eb1c3}
+:root[data-theme="dark"] .remove-card:hover:not(:disabled){background:#503433;color:#ffb2a4}
+@media(max-width:800px){.add-section-form{grid-template-columns:minmax(0,1fr) 130px}.add-section-form>.save-button{grid-column:1/-1;justify-self:start}}
+@media(max-width:600px){.header-actions{gap:0}.theme-toggle{min-width:36px;padding:7px}.theme-toggle span{display:none}.add-section-form{grid-template-columns:1fr}.add-section-form>.save-button{grid-column:1}.card-controls{align-items:flex-start}.type-badge{white-space:normal;line-height:1.15}.card-name-input{margin-top:16px;font-size:12px}}
